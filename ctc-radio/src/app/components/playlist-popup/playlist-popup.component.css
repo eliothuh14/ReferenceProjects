@@ -1,0 +1,43 @@
+h2 {
+    color: #eeeeee;
+}
+
+img {
+    width: 50%;
+    padding-top: 5px;
+}
+
+th, td {
+    width: 10%;
+}
+
+td.mat-cell {
+    border-color: #282828;
+}
+
+mat-dialog-actions {
+    margin-top: 30px;
+    float: right;
+}
+
+button {
+    margin-right: 30px;
+    color: #eeeeee !important;
+}
+
+.mat-column-albumCoverURL {
+    width: 8%;
+    align-items: center;
+}
+
+.mat-column-Title {
+    width: 15%;
+}
+
+.cover {
+    justify-items: center;
+}
+
+table {
+    background-color: #121212 !important;
+}

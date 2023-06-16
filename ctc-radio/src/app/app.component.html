@@ -1,0 +1,8 @@
+<mat-toolbar class="toolbar">
+  <span class="spacer">CTC Radio</span>
+  <a routerLink='/radio'>Radio</a>
+  <a routerLink='/daily-playlists'>Daily Playlists</a>
+  <a routerLink='/about'>About</a>
+  <button mat-flat-button color="primary" class="login-button" (click)="openAccount()">{{logInOrOut}}</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

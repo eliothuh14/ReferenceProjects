@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Daily Playlists</h1>
+
+    <p>Here you will find the past days' radio queues compiled into individual playlists.</p>
+
+    <!-- wont need this button in the future, just for example right now. Adding new playlists will most likely be handled by the backend -->
+    <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"  (click)="addPlaylistToDataSource('11','https://static.billboard.com/files/media/Kehlani-While-We-Wait-album-art-2019-billboard-1240-1024x1024.jpg','July 15th, 2020')">
+        <mat-icon>library_add</mat-icon>
+    </button>
+
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" >
+        <mat-grid-tile *ngFor="let playlist of dataSource">
+            <div class="gallery-item">
+            <img [src]="playlist.albumCoverURL" style="width:300px;height:300px;" class="gallery-img">
+            <div class="top-left">{{playlist.date}}</div>
+                <div class="button-container">
+                    <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon" class="play-button" (click)="openPopup()">
+                        <mat-icon>play_arrow</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-grid-tile> 
+    </mat-grid-list>
+
+</div>
+    
+

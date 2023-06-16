@@ -1,0 +1,159 @@
+<div class="music-player">
+  <music-player></music-player>
+</div>
+
+<div class="search">
+  <mat-form-field appearance="standard">
+  <mat-label> Search </mat-label>
+  <input matInput [formControl] = "song">
+  </mat-form-field>
+  <button mat-button color="primary" (click)="search()"> Search </button>
+  
+  <div [hidden]="isHidden" class="mat-elevation-z0">
+    <table mat-table [dataSource] = "dataSourceSearch"> 
+      
+
+      <ng-container matColumnDef="Title">
+           <th mat-header-cell *matHeaderCellDef>Title </th>
+           <td mat-cell *matCellDef="let song"> {{song.name}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="Artist">
+           <th mat-header-cell *matHeaderCellDef> Artist </th>
+           <td mat-cell *matCellDef="let song"> {{song.artists[0].name}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="Album">
+           <th mat-header-cell *matHeaderCellDef> Album </th>
+           <td mat-cell *matCellDef="let song"> {{song.album.name}} </td>
+         </ng-container>
+         
+         <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" aria-label="Example icon button with a bookmark icon" 
+            class="add-button" (click)="openPopup(row.uri, row.name, row.artists[0].name)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+         <ng-container matColumnDef="DiscNumber">
+          <th mat-header-cell *matHeaderCellDef> DiscNumber </th>
+          <td mat-cell *matCellDef="let song"> {{song.disc_number}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Duration_ms">
+          <th mat-header-cell *matHeaderCellDef> Duration_ms </th>
+          <td mat-cell *matCellDef="let song"> {{song.duration_ms}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="explicit">
+          <th mat-header-cell *matHeaderCellDef> Explicit </th>
+          <td mat-cell *matCellDef="let song"> {{song.explicit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ExternalIDs">
+          <th mat-header-cell *matHeaderCellDef> ExternalIDs </th>
+          <td mat-cell *matCellDef="let song"> {{song.external_ids}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="externalURLs">
+          <th mat-header-cell *matHeaderCellDef> ExternalURls </th>
+          <td mat-cell *matCellDef="let song"> {{song.external_urls}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="href">
+          <th mat-header-cell *matHeaderCellDef> Href </th>
+          <td mat-cell *matCellDef="let song"> {{song.href}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="IsLocal">
+          <th mat-header-cell *matHeaderCellDef> IsLocal </th>
+          <td mat-cell *matCellDef="let song"> {{song.is_local}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isPlayable">
+          <th mat-header-cell *matHeaderCellDef> IsPlayable </th>
+          <td mat-cell *matCellDef="let song"> {{song.is_playable}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Popularity">
+          <th mat-header-cell *matHeaderCellDef> popularity </th>
+          <td mat-cell *matCellDef="let song"> {{song.popularity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PreviewURL">
+          <th mat-header-cell *matHeaderCellDef> PreviewURl </th>
+          <td mat-cell *matCellDef="let song"> {{song.preview_url}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef> type </th>
+          <td mat-cell *matCellDef="let song"> {{song.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Uri">
+          <th mat-header-cell *matHeaderCellDef> URI </th>
+          <td mat-cell *matCellDef="let song"> {{song.uri}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="TrackID">
+          <th mat-header-cell *matHeaderCellDef> TrackID </th>
+          <td mat-cell *matCellDef="let song"> {{song.id}} </td>
+        </ng-container>
+
+         
+
+         <ng-container matColumnDef="albumCoverURL">
+           <th mat-header-cell *matHeaderCellDef></th>
+           <td mat-cell *matCellDef="let song"> <img [src]= song.album.images[0].url />  </td>
+         </ng-container>    
+    
+         <tr mat-header-row *matHeaderRowDef="displayedColumnsSearch; sticky: true;"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumnsSearch; "></tr>
+    </table>
+  </div>
+</div>  
+
+<div class="queue mat-elevation-z0">
+  <table mat-table [dataSource] = "dataSource" > 
+    <ng-container matColumnDef="Title">
+                <th mat-header-cell *matHeaderCellDef>Title</th>
+                <td mat-cell *matCellDef="let song"> {{song.track.name}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="Artist">
+                <th mat-header-cell *matHeaderCellDef>Artist</th>
+                <td mat-cell *matCellDef="let song"> {{song.track.artists[0].name}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="Album">
+                <th mat-header-cell *matHeaderCellDef>Album</th>
+                <td mat-cell *matCellDef="let song"> {{song.track.album.name}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="TrackID">
+                <th mat-header-cell *matHeaderCellDef>trackID</th>
+                <td mat-cell *matCellDef="let song"> {{song.trackID}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="albumCoverURL">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let song" class="cover"><img [src]=song.track.album.images[0].url/></td>
+            </ng-container>
+            
+            <ng-container matColumnDef="timeAdded">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let song"> {{song.timeAdded}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="votes">
+                <th mat-header-cell *matHeaderCellDef>Votes</th>
+                <td mat-cell *matCellDef="let song"> {{song.votes}} </td>
+            </ng-container>
+
+       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

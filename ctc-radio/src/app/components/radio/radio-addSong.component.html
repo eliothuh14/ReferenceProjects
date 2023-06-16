@@ -1,0 +1,7 @@
+<ng-container #popup class="container">
+  <h2 mat-dialog-title>Do you want to add "{{data.title}}" by {{data.artist}} to queue?</h2>
+  <mat-dialog-actions>
+      <button mat-flat-button color="primary" (click)="onSubmitCreate()" mat-dialog-close>Add to Queue</button>
+      <button mat-flat-button mat-dialog-close color="primary">Close</button>
+  </mat-dialog-actions>
+</ng-container>

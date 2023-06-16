@@ -1,0 +1,44 @@
+.container {
+    padding: 60px 60px 0px 60px; 
+    color: #eeeeee;
+    height: 100%;
+}
+
+  .gallery-item {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .gallery-img {
+    opacity: 1;
+    transition: opacity 0.3s ease-in; /* transition the opacity for nice fade */
+  }
+  .gallery-item:hover .gallery-img {
+    opacity: 0; /* change opacity on wrapper div hover */
+  }
+  .gallery-button {
+    display: block;
+    
+  }
+
+  .top-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px 0px 0px 10px; 
+    width:290px;
+    height:35px;
+    background-color: rgb(59, 58, 58);
+    opacity: .8;
+    /* background-image: url('https://images.pexels.com/photos/1329917/pexels-photo-1329917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
+  }
+  .play-button {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    
+}

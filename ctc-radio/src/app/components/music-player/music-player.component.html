@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <div class="top">
+            <img [src]="getImageSrc()"/>
+            <div class="spacer">
+                <h1 class="col-spacer">{{song.title}}</h1>
+                <h2>{{song.artist}}</h2>
+                <h2>{{song.albumName}}</h2>
+                <h2>{{song.year}}</h2>
+                <h2>Added by: {{username}}</h2>
+            </div>
+            <div class="buttons">
+                <button mat-flat-button color="primary" class="mute but" (click)="changeVol()">{{vol}}</button>
+                <button mat-flat-button color="primary" class="but">Cancel</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="times">
+                <script>setInterval(1000, updateCurrLength());
+                </script>
+                <p>{{songCurrLength}}</p>
+                <p>{{song.length}}</p>
+            </div>
+            <mat-progress-bar color="primary" mode="determinate" [value]="barValue"></mat-progress-bar>
+        </div>
+    </mat-card-content>
+</mat-card>

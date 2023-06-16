@@ -1,0 +1,18 @@
+<mat-toolbar color="accent">
+    <span>Logout</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button mat-dialog-close >
+      <mat-icon>cancel</mat-icon>
+    </button>
+
+</mat-toolbar>
+<p>Your Account</p>
+<mat-card>email: {{email}}</mat-card>
+    <mat-dialog-actions>
+        <div class="button-holder">
+            <button mat-flat-button color="primary"  (click)="onSubmitLogout()" mat-dialog-close>Logout</button>
+            
+        </div>
+    </mat-dialog-actions>
+
+

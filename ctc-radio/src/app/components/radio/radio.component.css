@@ -1,0 +1,54 @@
+table{
+    width: 100%;
+    background-color: #121212 !important;
+}
+
+.mat-elevation-z0{
+    height:400px;
+    overflow: auto; 
+}
+
+.mat-form-field{
+    width: 81%;
+}
+
+.queue{
+    margin-left: 3%;
+    width: 60%; 
+    /* float: left;  */
+}
+
+.search{
+    float: right; 
+    width: 30%;
+    /* margin-left: 4%;*/
+    margin-right: 3%; 
+}
+
+.mat-elevation-z6{
+    width: 100%;
+    overflow: auto;
+}
+
+.music-player{
+    margin-bottom: 3%;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%; 
+}
+
+.add-button{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+th.mat-column-albumCoverURL {
+    width: 10% !important;
+}
+
+img {
+    width: 60%;
+}

@@ -1,0 +1,26 @@
+.example-form {
+    position: relative;
+    margin: 10px auto;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    text-decoration-color: white;
+  }
+
+  .example-full-width {
+    width: 100%;
+
+  }
+  .button-holder{
+      align-items: center;
+  }
+
+  .mat-button:hover{
+      text-decoration:underline;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-icon {
+    font-size: 20px;
+  }

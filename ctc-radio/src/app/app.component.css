@@ -1,0 +1,27 @@
+.spacer {
+    flex: 1 auto;
+    color: #1DB954;
+    font-size: 25px;
+}
+
+.toolbar {
+    border-bottom: 1px solid black;
+    padding: 0px 40px 0px 40px;
+    height: 10%;
+}
+
+a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #eeeeee;
+}
+
+.login-button {
+    margin-left: 50px;
+    color: #eeeeee !important;
+}
